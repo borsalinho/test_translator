@@ -44,8 +44,8 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
 
-    //retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+//    //retrofit
+//    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     //GSON
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     //Coroutine
@@ -53,9 +53,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     //Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-    //Room
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
+//    //Room
+//    implementation("androidx.room:room-runtime:2.6.1")
+//    implementation("androidx.room:room-ktx:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
     //Dagger2
     implementation("com.google.dagger:dagger:2.45")

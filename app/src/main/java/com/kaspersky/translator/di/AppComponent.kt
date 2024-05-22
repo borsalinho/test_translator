@@ -14,7 +14,7 @@ import javax.inject.Singleton
     DataModule::class
 ])
 interface AppComponent {
-    fun inject(mainActivity: MainActivity)
+//    fun inject(mainActivity: MainActivity)
     fun inject(homeFragment: HomeFragment)
     fun inject(favoriteFragment: FavoriteFragment)
 }
