@@ -56,6 +56,9 @@ class HomeFragment : Fragment() {
         val textResult = binding.textResult
         val recyclerView = binding.recyclerView
 
+        homeViewModel.text_result.observe(viewLifecycleOwner) {
+            textResult.text = it
+        }
 
         btnTranslate.setOnClickListener {
             val query = textEnter.text.toString().trim()
@@ -66,16 +69,17 @@ class HomeFragment : Fragment() {
             }
 
             lifecycleScope.launch {
-                var translte =  homeViewModel.sendWord(WordQuerry(query))
-                println("я тест")
-                println(translte.responce)
-                withContext(Dispatchers.Main) {
-                    textResult.text = translte.responce
+                try {
+                    val result = homeViewModel.sendWord(WordQuerry(query))
+                    homeViewModel.setTextResult(result.responce)
+                } catch (e: Exception) {
+                    homeViewModel.setTextResult("Нет результата")
                 }
+
+
             }
 
         }
-
 
 
         //---------------------------------------------------------------

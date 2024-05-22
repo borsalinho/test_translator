@@ -16,13 +16,15 @@ class MyViewModel(
     private var sendWordUseCase : SendWordUseCase
 ) : ViewModel() {
 
-
-
-
-
     private val _translations = MutableLiveData<List<TranslationEntity>>()
     val translations: LiveData<List<TranslationEntity>> get() = _translations
 
+    private var _text_result = MutableLiveData<String>()
+    val text_result: LiveData<String> get() = _text_result
+
+    fun setTextResult(value: String) {
+        _text_result.value = value
+    }
 
 
 

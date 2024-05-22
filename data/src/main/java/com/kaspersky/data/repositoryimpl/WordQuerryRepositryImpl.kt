@@ -1,6 +1,5 @@
 package com.kaspersky.data.repositoryimpl
 
-import com.kaspersky.data.mappers.toQuerry
 import com.kaspersky.data.network.ApiSkyEnd
 
 import com.kaspersky.domain.model.WordQuerry
