@@ -41,6 +41,8 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
     //retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    //GSON
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
