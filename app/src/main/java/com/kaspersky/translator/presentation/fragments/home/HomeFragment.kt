@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import com.kaspersky.domain.model.WordQuerry
+import com.kaspersky.domain.model.WordsResponce
 import com.kaspersky.translator.app.App
 import com.kaspersky.translator.databinding.FragmentHomeBinding
 import com.kaspersky.translator.view_model.MyViewModel
@@ -30,7 +31,6 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         (requireActivity().application as App).appComponent.inject(this)
         //---------------------------------------------------------------
-
 
 
 
@@ -70,8 +70,13 @@ class HomeFragment : Fragment() {
 
             lifecycleScope.launch {
                 try {
-                    val result = homeViewModel.sendWord(WordQuerry(query))
+                    val result = homeViewModel.sendWord(query = WordQuerry(query))
                     homeViewModel.setTextResult(result.responce)
+
+                    homeViewModel.saveTranslation(
+                        query = WordQuerry(query),
+                        responce = WordsResponce(result.responce)
+                    )
                 } catch (e: Exception) {
                     homeViewModel.setTextResult("Нет результата")
                 }

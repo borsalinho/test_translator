@@ -7,6 +7,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.room.Room
+import com.kaspersky.data.storage.dao.TranslationDao
+import com.kaspersky.data.storage.database.AppDatabase
 import com.kaspersky.translator.R
 import com.kaspersky.translator.databinding.ActivityMainBinding
 import com.kaspersky.translator.view_model.MyViewModel

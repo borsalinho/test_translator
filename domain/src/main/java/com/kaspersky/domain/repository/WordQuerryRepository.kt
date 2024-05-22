@@ -6,5 +6,5 @@ import com.kaspersky.domain.model.WordsResponce
 interface WordQuerryRepository {
     suspend fun SendWordQuerryToApiAndGetResponse(wordQuerry : WordQuerry) : WordsResponce
 
-    suspend fun SaveWordQuerryToDataBase()
+    suspend fun SaveWordQuerryToDataBase(query : WordQuerry, responce: WordsResponce)
 }

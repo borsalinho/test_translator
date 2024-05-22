@@ -4,6 +4,8 @@ import android.app.Application
 import com.kaspersky.translator.di.AppComponent
 import com.kaspersky.translator.di.AppModule
 import com.kaspersky.translator.di.DaggerAppComponent
+import com.kaspersky.translator.di.DataModule
+import com.kaspersky.translator.di.DomainModule
 
 class App : Application() {
 
@@ -14,6 +16,7 @@ class App : Application() {
         appComponent = DaggerAppComponent
             .builder()
             .appModule(AppModule(context = this))
+            .dataModule(DataModule())
             .build()
 
     }
